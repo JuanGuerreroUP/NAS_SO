@@ -9,12 +9,15 @@ if test -f $KeyPath; then
 	echo "$FILE existeeee"   
 	for (( i = 0; i < ${#input[@]}; i++ ))
 	do
-		  file="$NASPath/${input[i]}"
-		if [[ -f $file ]]; then
-		cp "$file" "$ObjectivePath"
-		fi
-		if [[ -d $file ]]; then
-		cp -r "$file" "$ObjectivePath"
+		if [[ ${input[i]} != " " ]]; then 
+			echo "''" ${input[i]} "''"
+			  file="$NASPath/${input[i]}"
+			if [[ -f $file ]]; then
+				cp "$file" "$ObjectivePath"
+			fi
+			if [[ -d $file ]]; then
+				cp -r "$file" "$ObjectivePath"
+			fi
 		fi
 
 	done 
