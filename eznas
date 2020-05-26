@@ -27,17 +27,7 @@ case $1 in
     '-c')
         /opt/eznas/01Respaldo.sh
     ;;
-    '-b')
-        #$1--> path de NAS
-        #$2--> path Local
-        #$3--> tamaño de copiado
-        #$4--> número de bloques
-        if [[ $# -eq 3 ]]; then
-            /opt/eznas/pruebaBuena.sh $NASPath $ObjectivePath $2 $3
-        else
-            /opt/eznas/pruebaBuena.sh $NASPath $ObjectivePath '1G' 1
-        fi
-    ;;
+
     '-h')
         echo "Opción no disponible"
     ;;
