@@ -41,6 +41,9 @@ case $1 in
     '-h')
         echo "Opción no disponible"
     ;;
+    '-g')
+        nano /opt/eznas/TOCP.txt
+    ;;
     *)
         echo "comando incorrecto, pruebe usar eznas -h para ver las opciones disponibles"
         exit 1
