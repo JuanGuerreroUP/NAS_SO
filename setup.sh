@@ -1,24 +1,8 @@
 #!/bin/bash
 if [[ $(id -u) -ne 0 ]]; then
-    echo "Necesitas ser root para instalar eznas"
+    echo "Necesitas ser root para ejecutar este comando"
     exit 1
 fi
-
-apt-get install cifs-utils
-#git clone
-#copiar a rutas apropiadas
-
-
-echo "-----------------------------------------------"
-#ejecutar setup
-/opt/eznas/setup.sh
-
-
-
-#ejecutar credentials.sh $usershare $contrashare
-
-mkdir -p /opt/eznas
-
 error=1
 until [[ $error -eq 0 ]]; do
     echo -e "Ingresa la dirección IP del servidor: "
@@ -26,7 +10,7 @@ until [[ $error -eq 0 ]]; do
 
     echo -e "Ingresa el nombre de la carpeta compartida: "
     read share
-
+    
     echo -e "Ingresa el punto de montaje del servidor: "
     read mount
     mount+="/eznas"
@@ -49,7 +33,10 @@ until [[ $error -eq 0 ]]; do
         fi
     fi
 done
-echo -e "username=$usershare\npassword=$contrashare" > /etc/.eznascredentials
+#ejecutar localroute.sh
+
+/opt/eznas/credentials.sh  $usershare $contrashare
+
 
 lineaMount=$(cat /etc/fstab | grep -n 'eznas-mount' | sed -n 1p | cut -f1 -d:)
 stringMount="//$server/$share $mount cifs credentials=/etc/.eznascredentials,rw,file_mode=0777,dir_mode=0777 0 0"
