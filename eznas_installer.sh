@@ -18,9 +18,14 @@ chmod +x /bin/eznas
 chmod -R a+rw /opt/eznas/TOCP.txt
 
 
+
 echo "-----------------------------------------------"
 #ejecutar setup
 /opt/eznas/setup.sh
 
 
+rm /tmp/eznas/*
+rmdir /tmp/eznas/
+
+exit 0
 
