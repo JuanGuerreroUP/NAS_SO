@@ -15,7 +15,7 @@ cambiar la ruta local -l <newRoute>
 copiar a local -c 
 .RE
 .SH BUGS
-El benchmarking puede generar problemas.
+Ninguno obvio
 .SH AUTHOR
 .RS
 .nf
