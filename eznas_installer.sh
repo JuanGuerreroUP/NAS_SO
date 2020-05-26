@@ -7,9 +7,13 @@ fi
 apt-get install cifs-utils
 
 mkdir -p /opt/eznas
+mkdir -p /tmp/eznas
+git clone https://github.com/JuanGuerreroUP/NAS_SO.git /tmp/eznas
 
-#git clone
-#copiar a rutas apropiadas
+cp /tmp/eznas/*.sh /opt/eznas/
+chmod +x /opt/eznas/*.sh
+cp /tmp/eznas/eznas.sh /bin/eznas.sh
+chmod +x /bin/eznas.sh
 
 
 echo "-----------------------------------------------"
