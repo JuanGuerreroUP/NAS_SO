@@ -33,10 +33,10 @@ until [[ $error -eq 0 ]]; do
         fi
     fi
 done
-#ejecutar localroute.sh
 
 /opt/eznas/credentials.sh  $usershare $contrashare
 
+/opt/eznas/localroute.sh
 
 lineaMount=$(cat /etc/fstab | grep -n 'eznas-mount' | sed -n 1p | cut -f1 -d:)
 stringMount="//$server/$share $mount cifs credentials=/etc/.eznascredentials,rw,file_mode=0777,dir_mode=0777 0 0"
