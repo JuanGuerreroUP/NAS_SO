@@ -16,6 +16,8 @@ until [[ $error -eq 0 ]]; do
     mount+="/eznas"
     mkdir -p $mount
 
+    echo $mount > /opt/eznas/mountrute.txt
+
     echo -e "Ingresa el usuario de la carpeta compartida: "
     read usershare
 

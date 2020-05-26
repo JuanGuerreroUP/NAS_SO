@@ -1,0 +1,49 @@
+#!/bin/bash
+NASPath=$(cat /opt/eznas/mountrute.txt)
+ObjectivePath=$(cat /opt/eznas/localroute.txt)
+
+if [[ $# -eq 0 ]]; then
+    echo "comando incorrecto, pruebe usar eznas -h para ver las opciones disponibles"
+    exit 1
+fi
+case $1 in
+    '-s')
+        /opt/eznas/setup.sh
+    ;;
+    '-p')
+         if [[ $# -eq 3 ]]; then
+        /opt/eznas/credentials.sh $2 $3
+        else
+        /opt/eznas/credentials.sh
+        fi
+    ;;
+    '-l')
+        if [[ $# -eq 2 ]]; then
+            /opt/eznas/localroute.sh $2
+        else
+            /opt/eznas/localroute.sh
+        fi
+    ;;
+    '-c')
+        /opt/eznas/01Respaldo.sh
+    ;;
+    '-b')
+        #$1--> path de NAS
+        #$2--> path Local
+        #$3--> tamaño de copiado
+        #$4--> número de bloques
+        if [[ $# -eq 3 ]]; then
+            /opt/eznas/pruebaBuena.sh $NASPath $ObjectivePath $2 $3
+        else
+            /opt/eznas/pruebaBuena.sh $NASPath $ObjectivePath '1G' 1
+        fi
+    ;;
+    '-h')
+        echo "Opción no disponible"
+    ;;
+    *)
+        echo "comando incorrecto, pruebe usar eznas -h para ver las opciones disponibles"
+        exit 1
+    ;;
+esac
+exit $?
