@@ -17,7 +17,7 @@ chmod +x /bin/eznas
 > /opt/eznas/TOCP.txt
 chmod -R a+rw /opt/eznas/TOCP.txt
 
-
+cp /tmp/eznas/ezNAS /usr/local/man/man1/
 
 echo "-----------------------------------------------"
 #ejecutar setup
@@ -25,6 +25,8 @@ echo "-----------------------------------------------"
 
 
 rm -r /tmp/eznas
+
+
 
 exit 0
 
