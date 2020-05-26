@@ -13,7 +13,6 @@ config -s
 cambiar credenciales -p <user> <pass>
 cambiar la ruta local -l <newRoute>
 copiar a local -c 
-benchmarking -b <ays>
 .RE
 .SH BUGS
 El benchmarking puede generar problemas.
