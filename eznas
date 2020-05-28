@@ -29,6 +29,7 @@ case $1 in
     ;;
     '-m')
         cd $(cat /opt/eznas/localroute.txt)
+        $SHELL
     ;;
     '-h')
         man eznas | more
