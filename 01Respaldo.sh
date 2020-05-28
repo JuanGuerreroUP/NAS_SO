@@ -6,8 +6,7 @@ mkdir -p $ObjectivePath
 
 while IFS= read -r line
 do
-	echo "$line"
-		file="$NASPath/$line"
+	file="$NASPath/$line"
 	if [[ -f $file ]]; then
 		cp "$file" "$ObjectivePath"
 	fi
