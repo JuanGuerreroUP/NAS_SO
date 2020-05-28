@@ -5,24 +5,24 @@ if [[ $(id -u) -ne 0 ]]; then
 fi
 error=1
 until [[ $error -eq 0 ]]; do
-    echo -e "Ingresa la dirección IP del servidor: "
+    echo "Ingresa la dirección IP del servidor: "
     read server
 
-    echo -e "Ingresa el nombre de la carpeta compartida: "
+    echo "Ingresa el nombre de la carpeta compartida: "
     read share
     
-    echo -e "Ingresa el punto de montaje del servidor: "
-    read mount
+    echo "Ingresa el punto de montaje del servidor: "
+    read -e mount
     mount+="/eznas"
     mkdir -p $mount
 
     echo $mount > /opt/eznas/mountrute.txt
 
-    echo -e "Ingresa el usuario de la carpeta compartida: "
+    echo "Ingresa el usuario de la carpeta compartida: "
     read usershare
 
-    echo -e "Ingresa la contraseña de ${usershare}@${server}: "
-    read contrashare
+    echo "Ingresa la contraseña de ${usershare}@${server}: "
+    read -s contrashare
 
     mount -t cifs -o username=$usershare,password=$contrashare,rw,file_mode=0777,dir_mode=0777 //$server/$share $mount
     error=$?
