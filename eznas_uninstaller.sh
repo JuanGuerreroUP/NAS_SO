@@ -11,5 +11,5 @@ fi
 rm /bin/eznas
 rm -r /opt/eznas
 rm /usr/share/man/man1/eznas.1.gz
-exit $?
+exit 0
 
