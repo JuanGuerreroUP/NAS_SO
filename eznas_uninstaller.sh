@@ -11,9 +11,5 @@ fi
 rm /bin/eznas
 rm -r /opt/eznas
 rm /usr/share/man/man1/eznas.1.gz
-outErr=$?
-if [[ $outErr -eq 0 ]]; then
-    echo "eznas fue desinstalado correctamente"
-fi
-exit $outErr
+exit $?
 
