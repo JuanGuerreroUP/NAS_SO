@@ -29,7 +29,7 @@ case $1 in
     ;;
 
     '-h')
-        echo man eznas
+        man eznas
     ;;
     '-d')
         /opt/eznas/eznas_uninstallerlauncher.sh

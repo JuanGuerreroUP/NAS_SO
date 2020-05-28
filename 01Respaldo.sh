@@ -1,5 +1,5 @@
 #!/bin/bash
-input=( $( cat "/opt/eznas/TOCP.txt" ) )
+input="/opt/eznas/TOCP.txt"
 NASPath=$(cat /opt/eznas/mountrute.txt)
 ObjectivePath=$(cat /opt/eznas/localroute.txt)
 mkdir -p $ObjectivePath
@@ -15,5 +15,4 @@ do
 		cp -r "$file" "$ObjectivePath"
 	fi
 done < "$input"
-fi
 

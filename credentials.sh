@@ -9,7 +9,7 @@ if [[ $# -ne 2 ]]; then
     read usershare
 
     echo -e "Ingresa la contraseña de ${usershare}: "
-    read contrashare
+    read -s contrashare
     else
     usershare=$1
     contrashare=$2
