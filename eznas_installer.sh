@@ -18,7 +18,7 @@ chmod +x /bin/eznas
 chmod -R a+rw /opt/eznas/TOCP.txt
 
 path="/tmp/eznas/eznas.1" 
-pathMan="/usr/share/man/man1/" 
+pathMan="/usr/share/man/man1" 
 
 cp -u $path $pathMan
 gzip "$pathMan/eznas.1"
@@ -27,7 +27,7 @@ echo "-----------------------------------------------"
 #ejecutar setup
 /opt/eznas/setup.sh
 
-
+echo "still running"
 rm -r /tmp/eznas
 
 
