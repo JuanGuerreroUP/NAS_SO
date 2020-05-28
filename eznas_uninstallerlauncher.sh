@@ -6,7 +6,7 @@ if [[ $(id -u) -ne 0 ]]; then
 fi
 echo -e "Seguro que deseas desinstalar eznas? [s/n]:"
 read sure
-if [[ $sure ~= "s*" ]]; then
+if [[ $sure == s* ]]; then
     cp "$(dirname $0)/eznas_uninstaller.sh" /tmp/eznas_uninstaller.sh
     bash /tmp/eznas_uninstaller.sh &
 else

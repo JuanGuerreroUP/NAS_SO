@@ -10,9 +10,9 @@ mkdir -p /opt/eznas
 mkdir -p /tmp/eznas
 git clone https://github.com/JuanGuerreroUP/NAS_SO.git /tmp/eznas
 
-cp /tmp/eznas/*.sh /opt/eznas/
+cp -u /tmp/eznas/*.sh /opt/eznas/
 chmod +x /opt/eznas/*.sh
-cp /tmp/eznas/eznas /bin/eznas
+cp -u /tmp/eznas/eznas /bin/eznas
 chmod +x /bin/eznas
 > /opt/eznas/TOCP.txt
 chmod -R a+rw /opt/eznas/TOCP.txt
@@ -20,7 +20,7 @@ chmod -R a+rw /opt/eznas/TOCP.txt
 path="/tmp/eznas/eznas.1" 
 pathMan="/usr/share/man/man1/" 
 
-cp $path $pathMan
+cp -u $path $pathMan
 gzip "$pathMan/eznas.1"
 
 echo "-----------------------------------------------"
