@@ -27,7 +27,7 @@ echo "-----------------------------------------------"
 #ejecutar setup
 /opt/eznas/setup.sh
 
-echo "still running"
+
 rm -r /tmp/eznas
 
 
