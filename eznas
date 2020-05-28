@@ -27,7 +27,9 @@ case $1 in
     '-c')
         /opt/eznas/01Respaldo.sh
     ;;
-
+    '-m')
+        cd $(cat /opt/eznas/localroute.txt)
+    ;;
     '-h')
         man eznas
     ;;
