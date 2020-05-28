@@ -31,7 +31,7 @@ case $1 in
         cd $(cat /opt/eznas/localroute.txt)
     ;;
     '-h')
-        man eznas
+        man eznas | more
     ;;
     '-d')
         /opt/eznas/eznas_uninstallerlauncher.sh
