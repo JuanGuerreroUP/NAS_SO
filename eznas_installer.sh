@@ -17,7 +17,11 @@ chmod +x /bin/eznas
 > /opt/eznas/TOCP.txt
 chmod -R a+rw /opt/eznas/TOCP.txt
 
-cp /tmp/eznas/man/eznas /usr/local/man/man1/
+path="/tmp/eznas/eznas.1" 
+pathMan="/usr/share/man/man1/" 
+
+cp $path $pathMan
+gzip "$pathMan/eznas.1"
 
 echo "-----------------------------------------------"
 #ejecutar setup

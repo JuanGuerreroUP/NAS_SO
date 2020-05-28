@@ -29,7 +29,10 @@ case $1 in
     ;;
 
     '-h')
-        echo "Opción no disponible"
+        echo man eznas
+    ;;
+    '-d')
+        /opt/eznas/eznas_uninstallerlauncher.sh
     ;;
     '-g')
         nano /opt/eznas/TOCP.txt
