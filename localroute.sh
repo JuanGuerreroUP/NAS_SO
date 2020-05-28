@@ -10,5 +10,6 @@ if [[ $# -ne 1 ]]; then
 fi
 copias+="/localnas"
 mkdir -p $copias
+chmod -R a+rw $copias
 
 echo $copias > /opt/eznas/localroute.txt
