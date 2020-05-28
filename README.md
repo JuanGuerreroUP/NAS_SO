@@ -19,7 +19,7 @@ Ejecutar ```eznas``` con cualquiera de las siguientes banderas:
  wget https://raw.githubusercontent.com/JuanGuerreroUP/NAS_SO/master/eznas_installer.sh && sudo bash eznas_installer.sh &&rm eznas_installer.sh
 ```
 
-#Autores
+## Autores
 * **Juan Guerrero**
 * **Mariana Gutierrez**
 * **José Pablo Peñaloza**
